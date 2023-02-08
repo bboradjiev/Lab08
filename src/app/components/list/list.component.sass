@@ -1,4 +1,6 @@
 @import '../../../variables'
+.wrapper
+    margin: 50px 20px
 
 .thread-container 
     display: flex
@@ -6,20 +8,26 @@
     flex-direction: column
     align-items: center
     gap: 25px
-    margin-top: 50px
+    min-width: 320px
+    width: 100%
+    max-width: 768px
+
+    
 
 .thread-item 
     position: relative
     display: flex
     flex-direction: column
     gap: 25px
+    width: 100%
 
 .thread-card 
     background-color: white
-    height: 150px
-    width: 768px
+    min-height: 150px
+    height: 100%
     border-radius: 10px
     box-shadow: 2px 3px 6px $primary-text
+    width: 100%
     
 .collapsed:not(:first-child)
     position: absolute
@@ -27,9 +35,10 @@
 .card-content 
     display: flex
     justify-content: space-between
-    align-items: center
+    align-items: flex-start
+    gap: 20px
     height: 100%
-    margin: 0 30px
+    margin: 40px 30px
 
 .card-info        
     width: 70%
@@ -43,11 +52,15 @@
     font-weight: bold
 
 .card-question 
-    width: 100%
+    // width: 100%
+    font-size: 14px
     line-height: 20px
 
 .card-text
     margin-top: 7px
+
+.card-date
+    font-size: 14px
 
 .high-rating 
     color: $high-rating
@@ -68,3 +81,6 @@
 
 .low-raiting-tab
     background-color: $low-rating
+
+@media all and (max-width: 320px)
+    overflow-x: auto

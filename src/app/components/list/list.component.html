@@ -1,31 +1,31 @@
-<div class="thread-container" >
-    <div class="thread-item" *ngFor="let thread of threadsData;let j = index">
+<div class="wrapper">
+    <div class="thread-container" >
+        <div class="thread-item" *ngFor="let thread of threadsData;let j = index">
 
-        <div class="thread-card" 
-            *ngFor="let card of thread; let i = index" 
-            [ngClass]="{'collapsed': !card.expanded}"
-            [ngStyle]="!card.expanded ? {'z-index': thread.length - i, top: 7 * i + 'px', left: 7 * i + 'px'} : {}">
-            
-            <div 
-                class="messages-tab"
-                [ngClass]="{'high-rating-tab': card.score! >= 6, 'low-raiting-tab': card.score! <= 5}"
-                *ngIf="!card?.expanded && thread.length > 1">{{thread.length}} messages
-            </div>
-            
-            <div class="card-content" (click)="expandTread(card)">
-                <div class="card-info">
-                    <h4 class="card-subject" [ngClass]="{'high-rating': card.score! >= 6, 'low-raiting': card.score! <= 5}">{{card.subject}}</h4>
-                    <p class="card-question">{{card.question}}</p>
-                    <p class="card-text">{{card.text}}</p>
+            <div class="thread-card" 
+                *ngFor="let card of thread; let i = index" 
+                [ngClass]="{'collapsed': !card.expanded}"
+                [ngStyle]="!card.expanded ? {'z-index': thread.length - i, top: 7 * i + 'px', left: 7 * i + 'px'} : {}">
+                
+                <div 
+                    class="messages-tab"
+                    [ngClass]="{'high-rating-tab': card.score! >= 6, 'low-raiting-tab': card.score! <= 5}"
+                    *ngIf="!card?.expanded && thread.length > 1">{{thread.length}} messages
                 </div>
-                <div class="card-detail">
-                    <p>{{card.team}}</p>
-                    <p>{{card.created_at | originalDate}}</p>
-                </div>                                
+                
+                <div class="card-content" (click)="expandTread(card)">
+                    <div class="card-info">
+                        <h4 class="card-subject" [ngClass]="{'high-rating': card.score! >= 6, 'low-raiting': card.score! <= 5}">{{card.subject}}</h4>
+                        <p class="card-question">{{card.question}}</p>
+                        <p class="card-text">{{card.text}}</p>
+                    </div>
+                    <div class="card-detail">
+                        <p>{{card.team}}</p>
+                        <p class="card-date">{{card.created_at | originalDate}}</p>
+                    </div>                                
+                </div>
+                
             </div>
-            
         </div>
-
     </div>
 </div>
-
