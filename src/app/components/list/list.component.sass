@@ -1,0 +1,70 @@
+@import '../../../variables'
+
+.thread-container 
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    gap: 25px
+    margin-top: 50px
+
+.thread-item 
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 25px
+
+.thread-card 
+    background-color: white
+    height: 150px
+    width: 768px
+    border-radius: 10px
+    box-shadow: 2px 3px 6px $primary-text
+    
+.collapsed:not(:first-child)
+    position: absolute
+
+.card-content 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    margin: 0 30px
+
+.card-info        
+    width: 70%
+
+.card-detail
+    display: flex
+    flex-direction: column
+    align-items: end
+
+.card-subject
+    font-weight: bold
+
+.card-question 
+    width: 100%
+    line-height: 20px
+
+.card-text
+    margin-top: 7px
+
+.high-rating 
+    color: $high-rating
+
+.low-raiting
+    color: $low-rating
+
+.messages-tab
+    position: absolute
+    padding: 5px 38px
+    border-radius: 11px
+    top: -8px
+    right: 30px
+    color: white
+
+.high-rating-tab
+    background-color: $high-rating-tab
+
+.low-raiting-tab
+    background-color: $low-rating
